@@ -1,0 +1,43 @@
+{% comment %}
+  
+SECTION used for the About image and copy blocks
+
+{% endcomment %}
+
+{%- if section.settings.bodycopy != blank -%}
+<div id="cart__shipping-info">
+      <div id="cart__shipping-info__container">
+         <img src="{{ 'shipping-icon.svg' | asset_url }}" alt="" id="cart__shipping-info__svg"/>
+          <h2 class="h1-style center">{{ section.settings.title }}</h2>
+         {{ section.settings.bodycopy }}
+         <a class="contact__a center" href="{{ section.settings.singleLink }}">{{ section.settings.linkText }}</a>
+      </div>
+</div>
+{%- endif -%}
+{% schema %}
+ {
+    "name": "Cart Shipping Message",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "bodycopy",   
+        "label": "Text"     
+      },        
+      {
+        "type": "url",
+        "id": "singleLink",
+        "label": "Link"
+      },
+      {
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,83 @@
+{% if customer.tags contains 'Trade' %}<span class="h3-raleway">Trade Program</span>{% endif %}
+{% if customer.tags contains 'Wholesale' %}<span class="h3-raleway">Wholesale Program</span>{% endif %}
+<div id="accounts-header-releative"><h1>{{ 'customer.account.title' | t }}</h1>
+{% if customer.tags contains 'Trade' or customer.tags contains 'Wholesale' %}{% else %}<a href="/account?view=edit" id="accounts-header-apply" class="btn">Apply for Trade Program</a>{% endif %}
+</div>
+<hr class="hr--small">
+<div class="account-grid">
+
+  <div class="account-grid__orders">
+    <h2 class="h3-raleway">{{ 'customer.orders.title' | t }}</h2>
+
+    {% paginate customer.orders by 20 %}
+    {% if customer.orders.size != 0 %}
+
+      <table class="full">
+        <thead>
+          <tr>
+            <th>{{ 'customer.orders.order_number' | t }}</th>
+            <th>{{ 'customer.orders.date' | t }}</th>
+            <th>{{ 'customer.orders.payment_status' | t }}</th>
+            <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+            <th>{{ 'customer.orders.total' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in customer.orders %}
+            <tr>
+              <td>{{ order.name | link_to: order.customer_url }}</td>
+              <td>{{ order.created_at | date: format: 'date' }}</td>
+              <td>{{ order.financial_status_label }}</td>
+              <td>{{ order.fulfillment_status_label }}</td>
+              <td>{{ order.total_price | money }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    {% else %}
+
+      <p>{{ 'customer.orders.none' | t }}</p>
+
+    {% endif %}
+
+    {% if paginate.pages > 1 %}
+    <div class="text-center">
+      {% include 'pagination-custom' %}
+    </div>
+    {% endif %}
+    {% endpaginate %}
+  </div>
+
+  <div class="account-grid__info">
+    {% if customer.tags contains 'Trade' %}
+      <div id="trade-account-codes">
+         <img src="{{ 'discount.svg' | asset_url }}" alt="" class="trade-account-codes__icon"/>
+        <h2 class="h3-raleway">Trade Coupon Codes</h2>
+        <label>20% Off</label>
+        <p>SGTRADE20</p>
+        <label>Free Swatches</label>
+        <p>SGSWATCH</p>
+      </div>
+    {% endif %}
+    {% if customer.tags contains 'Wholesale' %}
+      <div id="trade-account-codes">
+         <img src="{{ 'discount.svg' | asset_url }}" alt="" class="trade-account-codes__icon"/>
+        <h2 class="h3-raleway">Wholesale Coupon Codes</h2>
+        <label>50% Off</label>
+        <p>SGWHOLESALE</p>
+        
+       
+        <label>Free Swatches</label>
+        <p>SGSWATCH</p>
+      </div>
+    {% endif %}
+    <h2 class="h3-raleway">{{ 'customer.account.details' | t }}</h2>
+
+
+    {{ customer.default_address | format_address }}
+
+    <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+  </div>
+
+</div>

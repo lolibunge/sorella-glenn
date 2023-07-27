@@ -1,0 +1,76 @@
+{% comment %}
+  
+SECTION used for the About image and copy blocks
+
+{% endcomment %}
+
+
+
+{%- if section.blocks.size > 0 -%}
+
+  <div id="about__testimonials">
+    <h2 class="h1-style">Testimonials</h2>
+    <div id="about__testimonials__slick">
+
+    {%- for block in section.blocks -%}
+      <div class="about__testimonials">
+        <div class="about__testimonials__interior">
+        {%- if block.settings.testimonialImage != blank -%}
+           <div class="about__testimonials__image">
+            {{ block.settings.testimonialImage | img_url: 'master', scale: 2 | img_tag: block.settings.testimonialImage.alt }}
+           </div>
+        {%- endif -%}
+     
+          <div class="about__testimonials__copy-div
+              {% assign noimg = " no-img" %}
+              {%- if block.settings.testimonialImage == blank -%}{{ noimg }}{%- endif -%}">
+               <img src="{{ 'quote-icon.svg' | asset_url }}" alt="" class="about__testimonials__quote-svg"/>
+              <h3 class="h3-minerva">{{ block.settings.testimonialHeadline }}</h3>
+             {{ block.settings.testimonialCopy }}
+             <span class="h3-style about__testimonials__name">{{ block.settings.title }}</span>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+    </div>
+    <div id="about__testimonials__controls">
+      <button id="" class="prev-one" aria-label="previous slide"><img alt="Previous Symbol" src="{{ 'previous.svg' | asset_url }}" /></button>
+      <button id="" class="next-one" aria-label="next slide"><img alt="Next Symbol" src="{{ 'next.svg' | asset_url }}" /></button>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+ {
+    "name": "Testimonials",
+    "blocks": [
+      {
+        "type": "testimonials",
+        "name": "Invidiual Testimonial",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Customer"
+          },
+          {
+            "id": "testimonialHeadline",
+            "type": "text",
+            "label": "Testimonial Headline"
+          },
+          {
+            "type": "richtext",
+            "id": "testimonialCopy",   
+            "label": "Testimonial"     
+          },        
+          {
+            "type": "image_picker",
+            "id": "testimonialImage",
+            "label": "Image",
+            "info": "Use a square shaped photograph for best results."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

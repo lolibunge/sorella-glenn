@@ -1,0 +1,66 @@
+<div class="rebl-our-mission feature-row--{{ section.id }}" style="flex-direction: {{ section.settings.horizontal-align }};">
+    {% if section.settings.image != blank %}
+    <div class="rebl-our-mission__image-container">
+        <img src="{{ section.settings.image | img_url:'master' }}" alt="{{ section.settigns.image.alt}}" />
+    </div>
+    {% endif %}
+  <div class="rebl-our-mission__text-container">
+    {% if section.settings.title != blank %}
+        <h2 class="h1-style no-margin">{{ section.settings.title | escape }}</h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+    <div class="rebl-our-mission__text-p">{{ section.settings.text }}</div>
+    {% endif %}
+  </div>
+
+</div>
+
+<style>
+
+</style>
+
+{% schema %}
+{
+  "name": "Rebl Our Mission",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default":"Image with text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label":"Text",
+      "default":"<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+        "type": "color",
+        "id": "heading-color",
+        "label": "Heading Color"
+    },
+    {
+        "type": "color",
+        "id": "text-color",
+        "label": "Text Color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rebl Our Mission",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

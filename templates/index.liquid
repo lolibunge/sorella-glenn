@@ -1,0 +1,24 @@
+{{ content_for_index }}
+
+<!-- HOME INSTAGRAM  -->
+<div id="home-instagram">
+	<div id="home-instagram__center">
+	 <div id="home-instagram__center__text"><h3 class="h1-style text-center no-margin"><a href="https://www.instagram.com/sorellaglenn/" target="_blank">@sorellaglenn</a></h3>
+	  <p class="text-center">Follow us on Instagram for the latest releases and trends.</p></div>
+	  <div id="instafeed"></div>
+  </div>
+</div>
+
+<script src="{{ 'instafeed.min.js' | asset_url }}"></script>
+<script src='https://sorellaglennjune.herokuapp.com/token.js'></script>
+
+
+<script>
+  var feed = new Instafeed({
+    accessToken: InstagramToken,
+    limit: 4,
+  });
+  
+  feed.run();
+</script>
+

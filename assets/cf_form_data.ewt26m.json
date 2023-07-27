@@ -1,0 +1,648 @@
+{
+  "form": {
+    "id": "ewt26m",
+    "name": "Registration",
+    "handle": "registration-985",
+    "theme_id": "79960965155",
+    "settings": {
+      "locales": {
+        "back": "Back",
+        "next": "Next",
+        "cancel": "Cancel",
+        "edit_link": "Edit account",
+        "fix_errors": "Please fix errors before continuing",
+        "is_invalid": "{{label}} is invalid",
+        "email_taken": "Email has already been taken",
+        "phone_taken": "Phone number has already been taken",
+        "step_counter": "Step {{current}} of {{total}}",
+        "verify_email": "Check your email for a verification link to activate your account.",
+        "not_available": "An error occurred while saving your account, please try again in a few minutes.",
+        "create_account": "Submit",
+        "update_account": "Update account",
+        "recaptcha_error": "Challenge verification failed, please try again",
+        "creating_account": "Creating account...",
+        "updating_account": "Updating account...",
+        "invalid_email_domain": "Email contains an invalid domain name"
+      },
+      "enableRecaptcha": false,
+      "whitelistedTags": "",
+      "recaptchaSiteKey": "",
+      "markRequiredFields": false,
+      "displayCancelButton": false,
+      "goBackAfterSubmission": false,
+      "cancelButtonRedirectUrl": "\/account\/login",
+      "postSubmissionRedirectUrl": "\/account",
+      "goBackAfterCancelButtonClick": false
+    },
+    "install_locations": [
+      "manual",
+      "account_edit"
+    ],
+    "created_at": "2020-06-05T19:07:03Z",
+    "updated_at": "2020-09-02T13:55:09Z",
+    "revision_ids": [
+      "wDT9rO",
+      "9pT24d",
+      "nRTZLD",
+      "znT6qb",
+      "boTE97",
+      "AdT3lx",
+      "4aTvG3",
+      "8oTlgO",
+      "akTyd8"
+    ]
+  },
+  "revision": {
+    "id": "wDT9rO",
+    "created_at": "2020-10-21T14:44:56Z",
+    "updated_at": "2020-10-21T14:44:56Z",
+    "embed_version": "4.1.0",
+    "published_at": null,
+    "fields": [
+      {
+        "id": 981479,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 0,
+        "type": "html",
+        "stepId": 1,
+        "default": "",
+        "label": "New custom HTML field",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "<div >\n  <small style=\"display: block; text-align: center;\">Already have a retail account? <a href=\"https:\/\/sorellaglenn.com\/account\/login\">Login<\/a> and click <em>Apply for Trade Program<\/em>.<\/small>\n<\/div>",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 636332,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 1,
+        "type": "html",
+        "stepId": 1,
+        "default": "",
+        "label": "New custom HTML field",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "  <h3 class=\"h3-raleway center\">\n    Contact Info & Login\n  <\/h3>",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 586973,
+        "dataColumn": {
+          "key": "phone_number",
+          "label": "New phone number field",
+          "dataType": "phone"
+        },
+        "parentId": null,
+        "position": 10,
+        "type": "phone",
+        "stepId": 1,
+        "default": "",
+        "label": "Phone number",
+        "placeholder": "Phone*",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true,
+          "defaultCountryCode": "US"
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 108969,
+        "dataColumn": {
+          "key": "instagram_handle",
+          "label": "Instagram Handle",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 11,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Instagram Handle",
+        "placeholder": "Instagram Handle",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "excludes",
+            "comparand": " ",
+            "errorMessage": "Must not contain spaces",
+            "metadata": {
+              "0": "P",
+              "1": "o",
+              "2": "l",
+              "3": "a",
+              "4": "r",
+              "5": "i",
+              "6": "s",
+              "7": "T",
+              "8": "e",
+              "9": "x",
+              "10": "t",
+              "11": "F",
+              "12": "i",
+              "13": "e",
+              "14": "l",
+              "15": "d",
+              "16": "4",
+              "17": "0"
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 136422,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 12,
+        "type": "html",
+        "stepId": 1,
+        "default": "",
+        "label": "New custom HTML field (copy) (copy)",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "  <h3 class=\"h3-raleway center\">\n   Reference\n  <\/h3>\n",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 254159,
+        "dataColumn": {
+          "key": "business_reference_1",
+          "label": "Business Reference 1",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 13,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Business Reference 1",
+        "placeholder": "Business Reference",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 249555,
+        "dataColumn": {
+          "key": "business_reference_2",
+          "label": "Business Reference 2",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 14,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Business Reference 2",
+        "placeholder": "Business Reference",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 754217,
+        "dataColumn": {
+          "key": "business_reference_3",
+          "label": "Business Reference 3",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 15,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Business Reference 3",
+        "placeholder": "Business Reference",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 125867,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 16,
+        "type": "html",
+        "stepId": 1,
+        "default": "",
+        "label": "New custom HTML field (copy) (copy) (copy)",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "  <h3 class=\"h3-raleway center\">\n   Resale Certificate\n  <\/h3>",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 176253,
+        "dataColumn": {
+          "key": "new_file_upload_field",
+          "label": "New file upload field",
+          "dataType": "file"
+        },
+        "parentId": null,
+        "position": 17,
+        "type": "file",
+        "stepId": 1,
+        "default": "",
+        "label": "New file upload field",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 0,
+        "dataColumn": {
+          "key": "first_name",
+          "label": "First name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 2,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "First name",
+        "placeholder": "First Name*",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": "first_name",
+        "autotag": null
+      },
+      {
+        "id": 1,
+        "dataColumn": {
+          "key": "last_name",
+          "label": "Last name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 3,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Last name",
+        "placeholder": "Last Name*",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": "last_name",
+        "autotag": null
+      },
+      {
+        "id": 2,
+        "dataColumn": {
+          "key": "email",
+          "label": "Email address",
+          "dataType": "email"
+        },
+        "parentId": null,
+        "position": 4,
+        "type": "email",
+        "stepId": 1,
+        "default": "",
+        "label": "Email address",
+        "placeholder": "Email*",
+        "description": "",
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "is_valid_email",
+            "comparand": null,
+            "errorMessage": "Please provide a valid email address"
+          },
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": "email_address",
+        "autotag": null
+      },
+      {
+        "id": 3,
+        "dataColumn": {
+          "key": "password",
+          "label": "Password",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 5,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Create Password",
+        "placeholder": "Create Password*",
+        "description": "",
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          },
+          {
+            "operator": "longer_than",
+            "comparand": 5,
+            "errorMessage": "Password is too short",
+            "metadata": {
+              "mandatory": true,
+              "staticOperator": true,
+              "comparandFieldProps": {
+                "min": 5
+              }
+            }
+          }
+        ],
+        "sensitive": true,
+        "preset": "password",
+        "autotag": null
+      },
+      {
+        "id": 853506,
+        "dataColumn": {
+          "key": "accepts_marketing",
+          "label": "Accepts marketing",
+          "dataType": "boolean"
+        },
+        "parentId": null,
+        "position": 6,
+        "type": "checkbox",
+        "stepId": 1,
+        "default": true,
+        "label": "Check to receive emails about special Sorella Glenn events and announcements.",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {},
+        "validations": [],
+        "sensitive": null,
+        "preset": "accepts_marketing",
+        "autotag": null
+      },
+      {
+        "id": 154069,
+        "dataColumn": null,
+        "parentId": null,
+        "position": 7,
+        "type": "html",
+        "stepId": 1,
+        "default": "",
+        "label": "New custom HTML field (copy)",
+        "placeholder": null,
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "content": "  <h3 class=\"h3-raleway center\">\n   Business Details\n  <\/h3>",
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 397485,
+        "dataColumn": {
+          "key": "default_address.company",
+          "label": "Company",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 8,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Company",
+        "placeholder": "Company Name*",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [
+          {
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank",
+            "metadata": {
+              "hiddenInApp": true
+            }
+          }
+        ],
+        "sensitive": null,
+        "preset": "company",
+        "autotag": null
+      },
+      {
+        "id": 849891,
+        "dataColumn": {
+          "key": "website",
+          "label": "Website",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 9,
+        "type": "text",
+        "stepId": 1,
+        "default": "",
+        "label": "Website",
+        "placeholder": "Website",
+        "description": "",
+        "enum": [],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "hideLabel": true
+        },
+        "validations": [],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      }
+    ],
+    "steps": [
+      {
+        "id": 1,
+        "title": "Step 1",
+        "description": ""
+      }
+    ],
+    "rules": []
+  }
+}

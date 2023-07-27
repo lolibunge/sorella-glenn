@@ -1,0 +1,41 @@
+{% comment %}
+  
+  SNIPPET used for Inspo single image
+
+{% endcomment %}
+
+<div class="inspo__double">
+	<div class="inspo__double__item inspo-left">
+		{%- if block.settings.doubleItem1singleLink != blank -%}
+			<a href="{{ block.settings.doubleItem1singleLink }}">
+		{%- endif -%}
+		<div class="inspo__double__img">
+			{%- if block.settings.doubleItem1singleImage != blank -%}
+	            {{ block.settings.doubleItem1singleImage | img_url: 'master', scale: 2 | img_tag: block.settings.doubleItem1singleImage.alt }}
+	         {%- endif -%}
+		</div>
+		<div class="inspo__text">
+			<h2 class="h3-raleway">{{ block.settings.doubleItem1Title }}</h2>
+		</div>
+		{%- if block.settings.doubleItem1singleLink != blank -%}
+			</a>
+		{%- endif -%}
+	</div>
+
+	<div class="inspo__double__item inspo-right">
+		{%- if block.settings.doubleItem2singleLink != blank -%}
+			<a href="{{ block.settings.doubleItem2singleLink }}">
+		{%- endif -%}
+		<div class="inspo__double__img">
+			{%- if block.settings.doubleItem2singleImage != blank -%}
+	            {{ block.settings.doubleItem2singleImage | img_url: 'master', scale: 2 | img_tag: block.settings.doubleItem2singleImage.alt }}
+	         {%- endif -%}
+		</div>
+		<div class="inspo__text">
+			<h2 class="h3-raleway">{{ block.settings.doubleItem2Title }}</h2>
+		</div>
+		{%- if block.settings.doubleItem2singleLink != blank -%}
+			</a>
+		{%- endif -%}
+	</div>
+</div>

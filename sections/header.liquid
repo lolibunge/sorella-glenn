@@ -1,0 +1,261 @@
+<header class="site-header" role="banner" data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div id="site-header__announcement">
+        {% if section.settings.show_announcement %}
+          <div class="site-header--text-links{% if section.settings.announcement_text == blank %} medium-down--hide{% endif %}">
+            {% if section.settings.show_announcement %}
+              {% if section.settings.announcement_link != blank %}
+                <a href="{{ section.settings.announcement_link }}">
+              {% endif %}
+
+                <p>{{ section.settings.announcement_text | escape }}</p>
+
+              {% if section.settings.announcement_link != blank %}
+                </a>
+              {% endif %}
+            {% endif %}
+
+          </div>
+        {% endif %}    
+  </div>
+  <div id="site-header__pre"></div>
+    <div id="site-header__container">
+
+          {% if shop.customer_accounts_enabled %}
+            <div id="site-header__account">
+              {% if customer %}
+                <a href="{{ routes.account_url }}"><img src="{{ 'user-icon.svg' | asset_url }}" alt="Logged In" id="site-header__account__icon"/>{{ customer.first_name }}</a>
+                 {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              {% else %}
+                {{ 'layout.customer.sign_in' | t | customer_login_link }}
+                <span class="site-header--spacer">{{ 'layout.customer.or' | t }}</span>
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              {% endif %}
+            </div>
+          {% endif %}
+
+        <div id="site-header__logo">
+          <a href="{{ routes.root_url }}" itemprop="url">
+            <img src="{{ 'sorella-glenn-logo.svg' | asset_url }}" alt="{{ shop.name }}" id="site-header__logo__img"/>
+          </a>
+        </div>
+        <div id="site-header__cart">
+          <a href="{{ routes.search_url }}" id="site-header__cart__a-search"><span>Search</span><img src="{{ 'search-icon.svg' | asset_url }}" alt="" id="site-header__search-icon"/></a>
+          <a href="{{ routes.cart_url }}" id="site-header__cart__a-cart">
+             <span class="cart">{{ 'layout.cart.cart' | t }}</span> <img src="{{ 'icon-cart.svg' | asset_url }}" alt="" id="site-header__cart-icon"/>
+             <div id="site-header__cart-count" class="{% if cart.item_count == 0 %}hidden-count{% endif %}"><span>{{ cart.item_count }}</span></div>
+          </a>
+        </div>
+    </div>  
+</header>
+
+<div id="mobileNavBar">
+  <div class="display-table-cell">
+    <button class="menu-toggle mobileNavBar-link" aria-controls="navBar" aria-expanded="false"><span class="icon icon-hamburger" aria-hidden="true"></span>{{ 'layout.navigation.mobile_menu' | t }}</button>
+  </div>
+</div>
+
+<nav class="nav-bar" id="navBar" role="navigation">
+  <div class="wrapper">
+    {% include 'mobile-nav' %}
+    {% include 'site-nav' %}
+  </div>
+</nav>
+
+
+
+{% schema %}
+{
+  "name": {
+    "da": "Overskrift",
+    "de": "Titel",
+    "en": "Header",
+    "es": "Encabezado",
+    "fi": "Ylätunniste",
+    "fr": "En-tête",
+    "hi": "हैडर",
+    "it": "Header",
+    "ja": "ヘッダー",
+    "ko": "머리글",
+    "ms": "Pengepala",
+    "nb": "Header",
+    "nl": "Koptekst",
+    "pt-BR": "Cabeçalho",
+    "pt-PT": "Cabeçalho",
+    "sv": "Rubrik",
+    "th": "ส่วนหัว",
+    "zh-CN": "标头",
+    "zh-TW": "標頭"
+  },
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": {
+        "da": "Menu",
+        "de": "Menü",
+        "en": "Menu",
+        "es": "Menú",
+        "fi": "Valikko",
+        "fr": "Menu",
+        "hi": "मेनू",
+        "it": "Menu",
+        "ja": "メニュー",
+        "ko": "메뉴",
+        "ms": "Menu",
+        "nb": "Meny",
+        "nl": "Menu",
+        "pt-BR": "Menu",
+        "pt-PT": "Menu",
+        "sv": "Meny",
+        "th": "เมนู",
+        "zh-CN": "菜单",
+        "zh-TW": "選單"
+      },
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": {
+        "da": "Meddelelseslinje",
+        "de": "Ankündigungsbereich",
+        "en": "Announcement bar",
+        "es": "Barra de anuncios",
+        "fi": "Ilmoituspalkki",
+        "fr": "Barre d'annonces",
+        "hi": "घोषणा बार",
+        "it": "Barra degli annunci",
+        "ja": "告知バー",
+        "ko": "공지 표시줄",
+        "ms": "Bar pengumuman",
+        "nb": "Kunngjøringslinje",
+        "nl": "Aankondigingsbalk",
+        "pt-BR": "Barra de anúncios",
+        "pt-PT": "Barra de comunicado",
+        "sv": "Meddelandefält",
+        "th": "แถบประกาศ",
+        "zh-CN": "公告栏",
+        "zh-TW": "公告列"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": {
+        "da": "Vis meddelelse",
+        "de": "Ankündigung anzeigen",
+        "en": "Show announcement",
+        "es": "Mostrar anuncio",
+        "fi": "Näytä ilmoitus",
+        "fr": "Afficher l'annonce",
+        "hi": "घोषणा डिखाएं",
+        "it": "Mostra annuncio",
+        "ja": "告知を表示する",
+        "ko": "공지 표시",
+        "ms": "Tunjukkan pengumuman",
+        "nb": "Vis kunngjøring",
+        "nl": "Aankondiging weergeven",
+        "pt-BR": "Exibir anúncio",
+        "pt-PT": "Mostrar comunicado",
+        "sv": "Visa tillkännagivande",
+        "th": "แสดงประกาศ",
+        "zh-CN": "显示公告",
+        "zh-TW": "顯示公告"
+      },
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": {
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "hi": "टेक्स्ट",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "ms": "Teks",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "default": {
+        "da": "Meddel noget her",
+        "de": "Hier etwas ankündigen",
+        "en": "Announce something here",
+        "es": "Anuncia algo aquí",
+        "fi": "Ilmoita jotakin tässä",
+        "fr": "Annoncez quelque chose ici",
+        "hi": "यहां कुछ घोषित करें",
+        "it": "Annuncia qualcosa qui",
+        "ja": "ここで告知してください",
+        "ko": "여기에 공지하십시오",
+        "ms": "Mengumumkan sesuatu di sini",
+        "nb": "Kunngjør noe her",
+        "nl": "Kondig hier iets aan",
+        "pt-BR": "Anuncie algo aqui",
+        "pt-PT": "Anunciar algo aqui",
+        "sv": "Meddela något här",
+        "th": "ประกาศข้อความที่นี่",
+        "zh-CN": "在此处进行公告",
+        "zh-TW": "在此公告資訊"
+      }
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": {
+        "da": "Link",
+        "de": "Link",
+        "en": "Link",
+        "es": "Enlace",
+        "fi": "Linkki",
+        "fr": "Lien",
+        "hi": "लिंक",
+        "it": "Link",
+        "ja": "リンク",
+        "ko": "링크",
+        "ms": "Pautan",
+        "nb": "Kobling",
+        "nl": "Link",
+        "pt-BR": "Link",
+        "pt-PT": "Ligação",
+        "sv": "Länk",
+        "th": "ลิงก์",
+        "zh-CN": "链接",
+        "zh-TW": "連結"
+      },
+      "info": {
+        "da": "Valgfri",
+        "de": "Optional",
+        "en": "Optional",
+        "es": "Opcional",
+        "fi": "Valinnainen",
+        "fr": "Facultatif",
+        "hi": "वैकल्पिक",
+        "it": "Facoltativo",
+        "ja": "オプション",
+        "ko": "선택 사항",
+        "ms": "Opsyenal",
+        "nb": "Valgfritt",
+        "nl": "Optioneel",
+        "pt-BR": "Opcional",
+        "pt-PT": "Opcional",
+        "sv": "Valfritt",
+        "th": "ไม่จำเป็น",
+        "zh-CN": "可选",
+        "zh-TW": "(選填)"
+      }
+    }
+  ]
+}
+{% endschema %}

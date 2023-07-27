@@ -1,0 +1,40 @@
+{% comment %}
+  THIS WAS MOVE TO PRODUCT TEMPLATE SECTION
+{% endcomment %}
+
+{%- if section.blocks.size > 0 -%}
+  <ul id="product-page__tips-ul">
+    {%- for block in section.blocks -%}
+      <li>
+          <a href="#tooltip-{{ forloop.index }}" aria-haspopup="true" aria-expanded="false">{{ block.settings.title }}</h2>
+          <ul id="tooltip-{{ forloop.index }}">
+            <li>{{ block.settings.tipText }}</li>
+          </ul>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Tips",
+  "blocks": [
+    {
+      "type": "tips",
+      "name": "Tips",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",   
+          "label": "Title"     
+        },
+        {
+          "type": "richtext",
+          "id": "tipText",   
+          "label": "Info"     
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

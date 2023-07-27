@@ -1,0 +1,19 @@
+{% comment %}
+  
+SECTION used for the Trade Benefits section
+
+{% endcomment %}
+
+ <div id="trade-help">{{ section.settings.benefit1title }}</div>
+{% schema %}
+ {
+    "name": "Trade Application Help",
+    "settings": [
+      {
+        "id": "benefit1title",
+        "type": "richtext",
+        "label": "Help"
+      }
+    ]
+  }
+{% endschema %}

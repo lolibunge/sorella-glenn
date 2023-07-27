@@ -1,0 +1,101 @@
+<div class="rebl-image-with-text feature-row--{{ section.id }}" style="flex-direction: {{ section.settings.horizontal-align }};">
+
+  <div class="rebl-image-with-text__text-container" style="color: {{ section.settings.text-color }}; background-color: {{ section.settings.background-color }};">
+    {% if section.settings.title != blank %}
+        <h2 class="h1-style no-margin" style="color: {{ section.settings.text-color }};">{{ section.settings.title | escape }}</h2>
+      <span class="rebl-image-with-text_subtitle">{{ section.settings.subtitle | escape }}</span>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rebl-image-with-text__text-p">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="h3-style collections-link rebl-image-with-text__btn">
+          {{ section.settings.button_label | escape }}
+        </a>
+    {% endif %}
+  </div>
+
+  <div class="rebl-image-with-text__img-container" style="background-image:url('{{ section.settings.image.src | img_url: 'x1200' }}')"></div>
+</div>
+
+<style>
+
+</style>
+
+{% schema %}
+{
+  "name": "Rebl Image with text",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default":"Image with text"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default":"Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label":"Text",
+      "default":"<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label":"Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+        "type": "color",
+        "id": "text-color",
+        "label": "Text Color"
+    },
+    {
+        "type": "color",
+        "id": "background-color",
+        "label": "Text Background Color"
+    },
+    {
+        "type": "select",
+        "id": "horizontal-align",
+        "label": "Image Align",
+        "default": "row",
+        "options": [
+          {
+            "value": "row",
+            "label": "Image Right"
+          },
+          {
+            "value": "row-reverse",
+            "label":  "Image Left"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Rebl Image with text",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

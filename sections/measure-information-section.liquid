@@ -1,0 +1,64 @@
+{% comment %}
+  
+SECTION used on the Tutorial / Measurement For BLOCKS
+
+{% endcomment %}
+
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'row' %}
+      {% include 'measure-row' %}
+
+      {% when 'fullrow' %}
+      {% include 'measure-fullrow' %}
+
+    {% endcase %}
+  {% endfor %}
+
+
+{% schema %}
+ {
+    "name": "Measurement Info",
+    "blocks": [
+      {
+        "type": "row",
+        "name": "Info Section",
+        "settings": [
+          {
+            "id": "measurementTitle",
+            "type": "text",
+            "label": "Headline"
+          },
+          {
+            "id": "measurementIntro-text-copy",
+            "type": "richtext",
+            "label": "Summary"
+          },
+          {
+             "type": "image_picker",
+              "id": "infographic",
+              "label": "Info Graphic"
+          }
+        ]
+      },
+      {
+        "type": "fullrow",
+        "name": "Trouble Shooting Block",
+        "settings": [
+          {
+            "id": "troubleshootingTitle",
+            "type": "text",
+            "label": "Headline"
+          },
+          {
+            "id": "troubleshootingIntro-text-copy",
+            "type": "richtext",
+            "label": "Summary"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

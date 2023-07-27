@@ -1,0 +1,44 @@
+{% comment %}
+  
+SECTION used for the About image and copy blocks
+
+{% endcomment %}
+
+
+<section id="trade__intro">
+      {%- if section.settings.aboutImage != blank -%}
+         <div class="trade__intro__image">
+          {{ section.settings.aboutImage | img_url: 'master', scale: 2 | img_tag: section.settings.aboutImage.alt }}
+         </div>
+      {%- endif -%}
+   
+      <div class="trade__intro__copy-div">
+          <h1 class="h1-style">{{ section.settings.tradetitle }}</h1>
+         {{ section.settings.bodycopy }}
+         <a class="trade__intro__a btn" href="#trade-form">Apply</a>
+      </div>
+</section>
+
+{% schema %}
+ {
+    "name": "Trade Intro With Image",
+    "settings": [
+      {
+        "id": "tradetitle",
+        "type": "text",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "bodycopy",   
+        "label": "Text"     
+      },        
+      {
+        "type": "image_picker",
+        "id": "aboutImage",
+        "label": "Image",
+        "info": "Use a square shaped photograph for best results."
+      }
+    ]
+  }
+{% endschema %}

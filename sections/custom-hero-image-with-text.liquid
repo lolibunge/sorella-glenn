@@ -1,0 +1,190 @@
+<div class="custom-hero__text-img feature-row--{{ section.id }}">
+
+  <div class="custom-hero__text-img__text">
+    <div>
+      {% if section.settings.title != blank %}
+      {% assign title_first_word = section.settings.title | truncatewords: 1, "" %}
+		<h2 class="h1-style no-margin custom-hero__title">{{ title_first_word }}</h2> 
+		<h2 class="h1-style no-margin custom-hero__title">{{ section.settings.title | split: title_first_word | last }}</h2> 
+
+      {% endif %}
+      {% if section.settings.text != blank %}
+      <div class="custom-hero__text-img__text-p">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <a href="{{ section.settings.button_link }}" class="h3-style collections-link custom-hero__link">
+        {{ section.settings.button_label | escape }}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="custom-hero__text-img__img desktop" style="background-image:url('{{ section.settings.image.src | img_url: 'x1200' }}')">
+    {% if section.settings.image != blank %}
+    {%- assign image = section.settings.image -%}
+
+    {% endif %}
+  </div>
+
+  <div class="custom-hero__text-img__img mobile" style="background-image:unset;">
+    {% if section.settings.mobile_image != blank %}
+    <img src="{{ section.settings.mobile_image | img_url: 'master' }}" />
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .custom-hero__text-img__text {
+    top: {{ section.settings.vertical-position }}%;
+  }
+
+  .custom-hero__title, .custom-hero__link, .custom-hero__text-img__text-p {
+    margin: 10px 0 0;
+    background: {{ section.settings.bg-color | color_modify: 'alpha', section.settings.opacity }};
+    padding: 0 10px;
+}
+@media screen and (max-width: 1024px){
+  .custom-hero__text-img__text {
+    left: 5%;
+    top: 23%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Ctz Hero image text",
+  "class": "index-section",
+  "settings": [
+    
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type":"header",
+      "content":"Image Layout"
+    },
+    {
+      "type":"color",
+      "id":"bg-color",
+      "label":"Text background color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"range",
+      "id":"opacity",
+      "min":0,
+      "max":1,
+      "step":0.1,
+      "label":"Background Opacity",
+      "default":0.5
+    },
+    {
+      "type": "range",
+      "id": "vertical-position",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical Position",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label":"Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+        "default": "left"
+      },
+      {
+      "type": "select",
+      "id": "description_alignment",
+      "label": "Description Alignment",
+      "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+      ],
+    "default": "left"
+  },
+  {
+    "type": "select",
+    "id": "button_alignment",
+    "label": "Button Alignment",
+    "options": [
+    {
+    "value": "left",
+    "label": "Left"
+    },
+    {
+    "value": "center",
+    "label": "Center"
+    },
+    {
+    "value": "right",
+    "label": "Right"
+    }
+    ],
+    "default": "left"
+    },
+    {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+    "type": "text",
+    "id": "button_label",
+    "label":  "Button label"
+    },
+    {
+    "type": "url",
+    "id": "button_link",
+    "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Ctz Hero image with text",
+    "category": "Image"
+    
+    }
+  ]
+}
+{% endschema %}

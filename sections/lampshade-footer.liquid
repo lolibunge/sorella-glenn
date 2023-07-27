@@ -1,0 +1,229 @@
+{% capture theme_settings_link %}<a href="/admin/themes/{{ theme.id }}/settings">{{ 'layout.footer.theme_settings' | t }}</a>{% endcapture %}
+
+<footer id="lampshade-footer" role="contentinfo">
+  <div id="lampshade-footer__container">
+    {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'logo' %}
+    <div id="lampshade-footer__logo" style="width:{{ block.settings.width }}; background-color: {{ block.settings.background-color }};">
+        <a href="{{ block.settings.logo-link }}" itemprop="url">
+          <img src="{{ block.settings.logo | img_url: 'master' }}" alt="{{ block.settings.logo.alt }}" />
+        </a>
+    </div>
+    {% when 'text' %}
+    <div id="lampshade-footer__text" style="width:{{ block.settings.width }};">
+        <div class="lampshade-footer__address">
+            {{ block.settings.address}}
+        </div>
+        <div class="lampshade-footer__richtext">
+            {{ block.settings.richtext}}
+        </div>
+    </div>
+    {% when 'menu' %}
+    <div id="lampshade-footer__menu" style="width:{{ block.settings.width }};">
+        <div class="lampshade-footer__custom-order">{{ block.settings.title }}</div>
+        <ul id="lampshade-footer__menus__help">
+          {% for link in block.settings.menu.links %}
+            <li>
+              <a href="{{ link.url }}" {% if link.active %} class="active"{% endif %}>{{ link.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+    </div>
+    {% endcase %}
+    {% endfor %}
+  </div>
+</footer>
+
+<style>
+div#shopify-section-lampshade-footer {
+    background-color: {{ section.settings.background-color }};
+}
+</style>
+
+
+{% schema %}
+{
+  "name":  "Lampshade Footer",
+  "class": "lampshade-footer-section",
+  "settings": [
+    {
+        "type": "color",
+        "id": "background-color",
+        "label": "Footer Background Color"
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "logo-link",
+          "label": "Logo Link"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Container width",
+          "default": "16%",
+          "options": [
+            {
+              "value": "16%",
+              "label": "16%"
+            },
+            {
+              "value": "25%",
+              "label":  "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label":  "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Footer Background Color"
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Container width",
+          "default": "16%",
+          "options": [
+            {
+              "value": "16%",
+              "label": "16%"
+            },
+            {
+              "value": "25%",
+              "label":  "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label":  "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "Address"
+        },
+        {
+          "type": "textarea",
+          "id": "richtext",
+          "label":  "Text",
+          "default": "<p>Use this text to share information about your brand with your customers.</p>"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Container width",
+          "default": "50%",
+          "options": [
+            {
+              "value": "16%",
+              "label": "16%"
+            },
+            {
+              "value": "25%",
+              "label":  "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label":  "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+      {
+      "name": "Lampshade Footer",
+      "category": "lampshade-footer"
+      }
+  ]
+}
+{% endschema %}

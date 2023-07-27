@@ -1,0 +1,49 @@
+<div class="page-contact">
+
+
+    <header class="page-contact__header">
+    <h1 class="section-header--title h1-style text-center">{{ page.title }}</h1>
+   </header>
+
+    <div class="page-contact__content">
+      {{ page.content }}
+    </div>
+
+    <div class="page-contact__form">
+      <h2 class="h1-style no-margin">Get in touch</h2>
+      <p>We'd love to hear from you!</p>
+      {% form 'contact' %}
+
+        {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+
+
+        {% include 'form-errors-custom' %}
+
+        <div id="contactFormWrapper">
+
+          <div class="page-contact__form-upper">
+            <label for="contactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+            <label for="contactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+
+            <label for="contactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+            <input type="tel" id="contactFormPhone" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          </div>
+
+          <label for="contactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+          <input type="submit" class="btn left large" value="{{ 'contact.form.send' | t }}">
+        </div>
+
+      {% endform %}
+    </div>
+
+</div>

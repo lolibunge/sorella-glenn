@@ -1,0 +1,57 @@
+{% comment %}
+  
+SECTION used for the Trade Benefits section
+
+{% endcomment %}
+
+
+<section id="trade__benefits" style="background-image: url({{ section.settings.tradeBackground.src | img_url: 'master' }});">
+    <div id="trade__benefits__container">
+      <h1>Benefits</h1>
+      <div id="trade__benefits__flex">
+        <div class="trade__benefits__single one">
+            <img src="{{ 'discount.svg' | asset_url }}" alt="" class="trade__benefits__icon"/>
+            <h2 class="h2-raleway">{{ section.settings.benefit1title }}</h2>
+           {{ section.settings.benefit1copy }}
+        </div>
+        <div class="trade__benefits__single">
+            <img src="{{ 'swatch.a.svg' | asset_url }}" alt="" class="trade__benefits__icon"/>
+            <h2 class="h2-raleway">{{ section.settings.benefit2title }}</h2>
+           {{ section.settings.benefit2copy }}
+        </div>
+      </div>
+    </div>
+</section>
+
+{% schema %}
+ {
+    "name": "Trade Benefits",
+    "settings": [
+      {
+        "id": "benefit1title",
+        "type": "text",
+        "label": "Benefit 1 Title"
+      },
+      {
+        "type": "richtext",
+        "id": "benefit1copy",   
+        "label": "Text"     
+      },
+      {
+        "id": "benefit2title",
+        "type": "text",
+        "label": "Benefit 2 Title"
+      },
+      {
+        "type": "richtext",
+        "id": "benefit2copy",   
+        "label": "Text"     
+      },
+       {
+        "type": "image_picker",
+        "id": "tradeBackground",
+        "label": "Background Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,38 @@
+<div class="collage">
+  {% for block in section.blocks %}
+  <img class="iamge_{{ forloop.index0 }}" src="{{ block.settings.image.src | img_url: 'x1200' }}" alt="image{{ block.settings.image.alt }}">
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collage",
+    "settings": [],
+    "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collage",
+      "category": "Image"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

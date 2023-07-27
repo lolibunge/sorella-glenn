@@ -1,0 +1,98 @@
+{% comment %}
+  
+  SNIPPET used for Inspo single image
+
+{% endcomment %}
+
+<div id="solid-collection-info">
+
+	{% comment %} ONE {% endcomment %}		
+
+	{%- if section.settings.infohl-1 != blank -%}
+		<div class="solid-collection-info__div">
+			<h2 class="h1-style-small center">{{ section.settings.infohl-1 }}</h2>
+			<div class="solid-collection-info__images"><!-- START OUTTER FLEX -->
+
+				{%- if section.settings.infoimage-1a != blank -%}
+					<div class="solid-collection-info__item">
+						<div class="solid-collection-info__image-holder">
+							{{ section.settings.infoimage-1a | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-1a.alt }}
+						</div>
+						<span class="solid-collection-info__label">{{ section.settings.imageLabel-1a }}</span>
+					</div>
+				{%- endif -%}
+
+		        {%- if section.settings.infoimage-1b != blank -%}
+		          <div class="solid-collection-info__item">
+		            <div class="solid-collection-info__image-holder">
+		              {{ section.settings.infoimage-1b | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-1b.alt }}
+		            </div>
+		            <span class="solid-collection-info__label">{{ section.settings.imageLabel-1b }}</span>
+		          </div>
+		        {%- endif -%}
+
+			</div><!-- END FLEX -->
+		</div>
+		{%- endif -%}
+
+		{% comment %} TWO {% endcomment %}	
+		{%- if section.settings.infohl-2 != blank -%}
+		<div class="solid-collection-info__div">
+			<h2 class="h1-style-small center">{{ section.settings.infohl-2 }}</h2>
+			<div class="solid-collection-info__images"><!-- START OUTTER FLEX -->
+					
+
+		        {%- if section.settings.infoimage-2a != blank -%}
+		          <div class="solid-collection-info__item">
+		            <div class="solid-collection-info__image-holder">
+		              {{ section.settings.infoimage-2a | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-2a.alt }}
+		            </div>
+		            <span class="solid-collection-info__label">{{ section.settings.imageLabel-2a }}</span>
+		          </div>
+		        {%- endif -%}
+
+		        {%- if section.settings.infoimage-2b != blank -%}
+		          <div class="solid-collection-info__item">
+		            <div class="solid-collection-info__image-holder">
+		              {{ section.settings.infoimage-2b | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-2b.alt }}
+		            </div>
+		            <span class="solid-collection-info__label">{{ section.settings.imageLabel-2b }}</span>
+		          </div>
+		        {%- endif -%}
+	
+
+			</div><!-- END FLEX -->
+		</div>
+		{%- endif -%}
+
+	  {% comment %} THREE {% endcomment %}  
+	  {%- if section.settings.infohl-3 != blank -%}
+	    <div class="solid-collection-info__div">
+	      <h2 class="h1-style-small center">{{ section.settings.infohl-3 }}</h2>
+	      <div class="solid-collection-info__images"><!-- START OUTTER FLEX -->
+	          
+
+	        {%- if section.settings.infoimage-3a != blank -%}
+	          <div class="solid-collection-info__item">
+	            <div class="solid-collection-info__image-holder">
+	              {{ section.settings.infoimage-3a | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-3a.alt }}
+	            </div>
+	            <span class="solid-collection-info__label">{{ section.settings.imageLabel-3a }}</span>
+	          </div>
+	        {%- endif -%}
+
+	        {%- if section.settings.infoimage-3b != blank -%}
+	          <div class="solid-collection-info__item">
+	            <div class="solid-collection-info__image-holder">
+	              {{ section.settings.infoimage-3b | img_url: 'master', scale: 2 | img_tag: section.settings.infoimage-3b.alt }}
+	            </div>
+	            <span class="solid-collection-info__label">{{ section.settings.imageLabel-3b }}</span>
+	          </div>
+	        {%- endif -%}
+
+
+      </div><!-- END FLEX -->
+    </div>
+  {%- endif -%}
+
+</div>

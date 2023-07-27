@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="43px" viewBox="0 0 44 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="How-to" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="How-to-Measure-Your-Shade" transform="translate(-698.000000, -2054.000000)" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(57.000000, 2010.000000)">
+                <g id="Group" transform="translate(641.000000, 44.000000)">
+                    <ellipse id="Oval" fill="#F69069" cx="22" cy="21.5" rx="22" ry="21.5"></ellipse>
+                    <path d="M27,32.3125 C27,34.8971875 24.757,37 22,37 C19.243,37 17,34.8971875 17,32.3125 C17,29.7278125 19.243,27.625 22,27.625 C24.757,27.625 27,29.7278125 27,32.3125 Z M17.57875,8.47650391 L18.42875,24.4140039 C18.4686875,25.1624219 19.1275625,25.75 19.926875,25.75 L24.073125,25.75 C24.8724375,25.75 25.5313125,25.1624219 25.57125,24.4140039 L26.42125,8.47650391 C26.4640625,7.67324219 25.781,7 24.923125,7 L19.076875,7 C18.219,7 17.5359375,7.67324219 17.57875,8.47650391 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

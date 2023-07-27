@@ -1,0 +1,110 @@
+<header class="lampshade-header" role="banner" data-section-id="{{ section.id }}" data-section-type="header-section">
+    <div id="lampshade-header__container">
+        <img src="{{ section.settings.logo | img_url:'master' }}" alt="{{ section.settings.logo.alt }}" id="lampshade-header__logo__img"/>
+    </div>  
+    <div id="mobileNavBar">
+        <div class="display-table-cell">
+          <button class="menu-toggle mobileNavBar-link" aria-controls="navBar" aria-expanded="false"><span class="icon icon-hamburger" aria-hidden="true"></span>{{ 'layout.navigation.mobile_menu' | t }}</button>
+        </div>
+      </div>
+      
+      <div class="lampshade-header__nav-container">
+        <nav class="nav-bar" id="navBar" role="navigation">
+        <div class="lampshade-header__nav-container-left">
+            <a href="https://sorellaglenn.com/">OUR PARENT COMPANY: SORELLA GLENN</a>
+        </div>
+        <div class="lampshade-header__nav-container-right">
+            
+                <div class="wrapper">
+                  {% for link in linklists[section.settings.menu].links %}
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                  {% endfor %}
+                  <a href="tel:843-718-0682">843 718 0682</a>
+                </div>
+              
+        </div>
+      </nav>
+      </div>
+</header>
+
+
+
+<style>
+.lampshade-header__nav-container{
+    background-color:{{ section.settings.background-color }};
+  }
+.lampshade-header__nav-container .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 94px;
+    height: {{ section.settings.height-bar }};
+}
+</style>
+
+{% schema %}
+{
+  "name": "Lampshade Header",
+  "class": "lampshade-header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+        "type": "color",
+        "id": "background-color",
+        "label": "Footer Background Color"
+    },
+    {
+        "type": "select",
+        "id": "height-bar",
+        "label": "Container height",
+        "default": "16px",
+        "options": [
+          {
+            "value": "16px",
+            "label": "16px"
+          },
+          {
+            "value": "25px",
+            "label":  "25px"
+          },
+          {
+            "value": "33px",
+            "label": "33px"
+          },
+          {
+            "value": "50px",
+            "label": "50px"
+          },
+          {
+            "value": "66px",
+            "label": "66px"
+          },
+          {
+            "value": "75px",
+            "label":  "75px"
+          },
+          {
+            "value": "100px",
+            "label": "100px"
+          }
+        ]
+      }
+  ],
+  "presets": [
+      {
+      "name": "Lampshade Header",
+      "category": "lampshade-footer"
+      }
+  ]
+}
+{% endschema %}

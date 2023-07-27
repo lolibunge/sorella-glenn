@@ -1,0 +1,31 @@
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template-solids' %}
+
+<div class="product-page__back">
+
+{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+{%- assign t = template | split: '.' | first -%}
+
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+
+    {%- case t -%}
+
+      {%- when 'product' -%}
+        {%- if collection.url -%}
+         
+            {{ "Back to Collection" | link_to: collection.url | replace: '<a', '<a class="h3-style collections-link"'}}
+ 
+
+        {%- else -%}
+        
+            <a href="https://sorellaglenn.myshopify.com/collections/solid-linen" class="h3-style collections-link">Back to Collection</a>
+
+        {%- endif -%}
+
+    {%- endcase -%}
+{%- endunless -%}
+
+</div>

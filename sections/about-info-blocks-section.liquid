@@ -1,0 +1,65 @@
+{% comment %}
+  
+SECTION used for the About image and copy blocks
+
+{% endcomment %}
+
+{%- if section.blocks.size > 0 -%}
+  <div id="about__info-blocks">
+    {%- for block in section.blocks -%}
+    <div class="about__info-blocks__row">
+        {%- if block.settings.aboutImage != blank -%}
+           <div class="about__info-blocks__image">
+            {{ block.settings.aboutImage | img_url: 'master', scale: 2 | img_tag: block.settings.aboutImage.alt }}
+           </div>
+        {%- endif -%}
+     
+        <div class="about__info-blocks__copy-div">
+            <h2 class="h3-minerva">{{ block.settings.title }}</h2>
+           {{ block.settings.bodycopy }}
+           <a class="about__a" href="{{ block.settings.singleLink }}">{{ block.settings.linkText }}</a>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+ {
+    "name": "Info Blocks",
+    "blocks": [
+      {
+        "type": "info",
+        "name": "Info and Image",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "bodycopy",   
+            "label": "Text"     
+          },        
+          {
+            "type": "image_picker",
+            "id": "aboutImage",
+            "label": "Image",
+            "info": "Use a square shaped photograph for best results."
+          },
+          {
+            "type": "url",
+            "id": "singleLink",
+            "label": "Link"
+          },
+          {
+            "id": "linkText",
+            "type": "text",
+            "label": "Link Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,101 @@
+{%- if section.blocks.size > 0 -%}
+<section class="home-featured-solid-images">
+  <span class="home-featured-solid-images__sub-headline">{{ section.settings.home-solid-text-subheading }}</span>
+  <h2 class="h1-style text-center">{{ section.settings.home-solid-text-headline }}</h2>
+  <ul class="home-featured-solid-images_ul" style="margin-bottom: 0;">
+    {%- for block in section.blocks -%}
+      <li>
+        {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}">
+        {%- endif -%}
+
+          {%- if block.settings.image != blank -%}
+            <span>{{ block.settings.image | img_url: '580x', scale: 2 | img_tag: block.settings.image.alt }}</span>
+
+          {%- endif -%}
+          <h3>{{ block.settings.phototitle }}</h3>
+           
+        {%- if block.settings.link != blank -%}
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+  <a class="contact__a center" href="{{ section.settings.collection-link }}">{{ section.settings.home-solid-link-text }}</a>
+
+</section>
+<div class="home-featured-solid-images__divider"></div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Home Solids",
+  "class": "index-solids-section",
+  "settings": [
+      {
+        "id": "home-solid-text-subheading",
+        "type": "text",
+        "label": "Sub Headline"
+      },
+     {
+        "id": "home-solid-text-headline",
+        "type": "text",
+        "label": "Headline"
+      },
+      {
+          "type": "url",
+          "id": "collection-link",
+          "label": "Section Link"
+      },
+      {
+        "id": "home-solid-link-text",
+        "type": "text",
+        "label": "Link Text"
+      }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Photos",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        },
+        {
+          "type": "text",
+          "id": "phototitle",   
+          "label": "Title"     
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Solids Grid",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

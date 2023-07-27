@@ -1,0 +1,13 @@
+{% comment %}
+  
+  SNIPPET used for intros
+
+{% endcomment %}
+
+{%- if section.settings.intro-text-headline != blank -%}
+<div id="section-intro-text">
+  <h1>{{ section.settings.intro-text-headline }}</h1>
+  {{ section.settings.intro-text-copy }}
+</div>
+
+{%- endif -%}

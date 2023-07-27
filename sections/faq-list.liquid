@@ -1,0 +1,35 @@
+{%- if section.blocks.size > 0 -%}
+  <ul class="faq__faq-section__ul">
+    {%- for block in section.blocks -%}
+      <li>
+          <h2 class="h3-style green">{{ block.settings.title }}</h2>
+         {{ block.settings.faqanswer }}
+          
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ list",
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",   
+          "label": "Question"     
+        },
+        {
+          "type": "richtext",
+          "id": "faqanswer",   
+          "label": "Answer"     
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

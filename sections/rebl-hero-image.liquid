@@ -1,0 +1,29 @@
+<div class="home-hero__text-img feature-row--{{ section.id }}">
+  <div class="home-hero__text-img__img" style="background-image:url('{{ section.settings.image.src | img_url: 'x1200' }}')">
+    {% if section.settings.image != blank %}
+      {%- assign image = section.settings.image -%}
+    {% endif %}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Rebl Hero image",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rebl Hero image",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

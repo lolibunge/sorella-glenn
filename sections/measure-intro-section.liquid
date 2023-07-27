@@ -1,0 +1,25 @@
+{% comment %}
+  
+SECTION used on the Tutorial / Measurement page
+
+{% endcomment %}
+
+{% include 'intro-text' %}
+
+{% schema %}
+  {
+    "name": "Intro Text",
+    "settings": [
+      {
+        "id": "intro-text-headline",
+        "type": "text",
+        "label": "Headline"
+      },
+      {
+        "id": "intro-text-copy",
+        "type": "richtext",
+        "label": "Summary"
+      }
+    ]
+  }
+{% endschema %}

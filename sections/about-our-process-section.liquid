@@ -1,0 +1,49 @@
+{% comment %}
+  
+SECTION used for the About image and copy blocks
+
+{% endcomment %}
+
+{%- if section.settings.ourProcessHeadline != blank -%}
+<div id="about__our-process" style="background-image: url({{ section.settings.ourProcessImage.src | img_url: 'master' }});">
+  <div id="about__our-process__div">
+    <h2 class="h1-style">{{ section.settings.ourProcessHeadline }}</h2>
+    {{ section.settings.ourProcessCopy }}
+     <a class="about__a center" href="{{ section.settings.ourProcessLink }}">{{ section.settings.ourProcessLinkText }}</a>
+  </div>
+</div>
+
+{%- endif -%}
+
+{% schema %}
+ {
+    "name": "Our Process",
+    "settings": [
+      {
+        "id": "ourProcessHeadline",
+        "type": "text",
+        "label": "Headline"
+      },
+      {
+        "id": "ourProcessCopy",
+        "type": "richtext",
+        "label": "Summary"
+      },
+      {
+        "id": "ourProcessLinkText",
+        "type": "text",
+        "label": "Link Text"
+      },
+      {
+        "type": "url",
+        "id": "ourProcessLink",
+        "label": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "ourProcessImage",
+        "label": "Background Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,139 @@
+{% comment %}
+  
+SECTION used on the Inspiration Gallery
+
+{% endcomment %}
+
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'single' %}
+      {% include 'inspo-single' %}
+
+      {% when 'double' %}
+      {% include 'inspo-double' %}
+
+      {% when 'triple' %}
+      {% include 'inspo-triple' %}
+
+    {% endcase %}
+  {% endfor %}
+
+
+{% schema %}
+ {
+    "name": "Gallery",
+    "blocks": [
+      {
+        "type": "single",
+        "name": "Single Image",
+        "settings": [
+          {
+            "id": "singleTitle",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "singleImage",
+            "label": "Image",
+            "info": "Only use a landscape orientation image"
+          },
+          {
+            "type": "url",
+            "id": "singleLink",
+            "label": "Link"
+          }
+        ]
+      },
+      {
+        "type": "double",
+        "name": "Two Images",
+        "settings": [
+          {
+            "id": "doubleItem1Title",
+            "type": "text",
+            "label": "Title 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "doubleItem1singleImage",
+            "label": "Image 1"
+          },
+          {
+            "type": "url",
+            "id": "doubleItem1singleLink",
+            "label": "Link 1"
+          },
+          {
+            "id": "doubleItem2Title",
+            "type": "text",
+            "label": "Title 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "doubleItem2singleImage",
+            "label": "Image 2"
+          },
+          {
+            "type": "url",
+            "id": "doubleItem2singleLink",
+            "label": "Link 2"
+          }
+        ]
+      },
+       {
+        "type": "triple",
+        "name": "Three Images",
+        "settings": [
+          {
+            "id": "tripleItem1Title",
+            "type": "text",
+            "label": "Title 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "tripleItem1singleImage",
+            "label": "Image 1"
+          },
+          {
+            "type": "url",
+            "id": "tripleItem1singleLink",
+            "label": "Link 1"
+          },
+          {
+            "id": "tripleItem2Title",
+            "type": "text",
+            "label": "Title 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "tripleItem2singleImage",
+            "label": "Image 2"
+          },
+          {
+            "type": "url",
+            "id": "tripleItem2singleLink",
+            "label": "Link 2"
+          },        
+          {
+            "id": "tripleItem3Title",
+            "type": "text",
+            "label": "Title 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "tripleItem3singleImage",
+            "label": "Image 3"
+          },
+          {
+            "type": "url",
+            "id": "tripleItem3singleLink",
+            "label": "Link 3"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

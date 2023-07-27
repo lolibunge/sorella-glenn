@@ -1,0 +1,42 @@
+{% comment %}
+  
+SECTION used on collection swatches
+
+{% endcomment %}
+
+{%- if section.blocks.size > 0 -%}
+{% assign style_comma = " " %}
+
+<style>
+  {%- for block in section.blocks -%}
+    .product-grid-item__colors-ul li.{{ block.settings.title | handleize }} {
+      background-color: {{ block.settings.variantColorSwatch }};
+    }{{ style_comma }}
+  {%- endfor -%}
+</style>
+{%- endif -%}
+
+{% schema %}
+  {
+   "name": "Swatches",
+    "blocks": [
+      {
+        "type": "colorswatch",
+        "name": "Color Swatch",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Variant Name",
+            "info": "Must exactly match variant name."
+          },      
+          {
+            "type": "color",
+            "id": "variantColorSwatch",
+            "label": "Swatch color"
+          }  
+        ]
+      }
+    ]
+  }
+{% endschema %}
