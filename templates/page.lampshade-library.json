@@ -1,11 +1,71 @@
 {
-    "wrapper": "div#div_id.div_class[attribute-one=value]",
-    "sections": {
-      "main": {
-        "type": "lampshade-library"
+  "wrapper": "div#div_id.div_class[attribute-one=value]",
+  "sections": {
+    "main": {
+      "type": "lampshade-library",
+      "settings": {
       }
     },
-    "order": [
-      "main"
-    ]
-  } 
+    "be9b2bfc-e4ef-4720-a549-272b5ca7d570": {
+      "type": "rebl-hero-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MollyRosePhoto-2023-Feb-LampshadeLibrary-269.jpg"
+      }
+    },
+    "6ce4db11-76f6-40bf-ab5a-05c4c49951e4": {
+      "type": "rebl-our-mission",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/our-mission.svg",
+        "title": "ouR mission",
+        "text": "<p>Launched in 2019, sisters Katy & Gracen provided a resource for beautifully made lampshades for consumers and interior designers.<\/p><p>Finding a special pleated colorful shade was virtually impossible, so they designed their debut collection and thus began the Sorella Glenn story.<\/p><p>The Lampshade Library is an extension of the brand in Charleston, SC. It's a little haberdashery of lampshades, accessories and samples to help find find the perfect match for your decor.<\/p><p>You may even check out shades from the library to take home to try for sizing!<\/p>",
+        "heading-color": "#00945e",
+        "text-color": "#006580"
+      }
+    },
+    "90e2eacc-7bd0-45b5-a9eb-cfac7084bd3a": {
+      "type": "rebl-image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Lamp_Shade_Library_-_Kings_Street_-_CHS-66.jpg",
+        "title": "Meet Our Founders",
+        "subtitle": "",
+        "text": "<p>Katy and Gracen grew up among antiques and classic style. Their mother was an antiques dealer, their father an engineer, and both had an eye for proportion and harmony. As such, both daughters have always been involved in something creative. Glenns routinely visited a secluded cabin in the mountains of NC, and these visits always included hikes, picnics and picking galax along the creekside trails. The Sorella Glenn logo is derived from the galax leaf.<\/p>",
+        "button_link": "shopify:\/\/pages\/about-sorella-glenn",
+        "text-color": "#ffffff",
+        "background-color": "#00945e",
+        "horizontal-align": "row-reverse"
+      }
+    },
+    "92b6c6f2-822f-47d0-af0b-42cb4725bb00": {
+      "type": "rebl-image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Lamp_Shade_Library_-_Kings_Street_-_CHS-30.jpg",
+        "title": "OUR FLAGSHIP STORE",
+        "subtitle": "",
+        "text": "<p>Nestled on Market street just off King, The Library is a one of a kind experiential boutique. All the Sorella Glenn patterns and colors are represented, and popular styles are stocked in store.<br\/>The Lampshade Library is a little haberdashery of notions to round out home decor. HELP!<\/p>",
+        "button_link": "shopify:\/\/pages\/lampshade-library",
+        "text-color": "#006580",
+        "background-color": "#c1dce7",
+        "horizontal-align": "16px"
+      }
+    },
+    "eab1b54b-b52e-4bba-9275-dc6f109b5007": {
+      "type": "rebl-collection-rows",
+      "settings": {
+        "title": "Featured Shades",
+        "home_featured_row": "fabric-samples",
+        "grid": 3,
+        "rows": 1,
+        "product_show_saved_amount": true,
+        "product_show_compare_at_price": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "be9b2bfc-e4ef-4720-a549-272b5ca7d570",
+    "6ce4db11-76f6-40bf-ab5a-05c4c49951e4",
+    "90e2eacc-7bd0-45b5-a9eb-cfac7084bd3a",
+    "92b6c6f2-822f-47d0-af0b-42cb4725bb00",
+    "eab1b54b-b52e-4bba-9275-dc6f109b5007"
+  ]
+}
