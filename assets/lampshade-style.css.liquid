@@ -4,7 +4,7 @@ main#main {
     width: 100%;
 }
 .shopify-section {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     margin: auto;
 }
 header.lampshade-header {
@@ -141,13 +141,16 @@ div#Lampshade-header__container {
 
 #lampshade-footer ul#lampshade-footer__menus__help {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 #lampshade-footer ul#lampshade-footer__menus__help a {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 18px;
     letter-spacing: 2.4px;
 }
 
@@ -292,10 +295,10 @@ div#Lampshade-header__container {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 518px;
+  min-height: 518px;
 }
 .rebl-image-with-text .rebl-image-with-text__text-container {
-    padding: 90px;
+    padding: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -21,7 +21,7 @@
     </div>
     {% when 'menu' %}
     <div id="lampshade-footer__menu" style="width:{{ block.settings.width }};">
-        <div class="lampshade-footer__custom-order">{{ block.settings.title }}</div>
+        {% if block.settings.title != blank %}<div class="lampshade-footer__custom-order">{{ block.settings.title }}</div>{% endif %}
         <ul id="lampshade-footer__menus__help">
           {% for link in block.settings.menu.links %}
             <li>
@@ -37,7 +37,7 @@
 
 <style>
 div#shopify-section-lampshade-footer {
-    background-color: {{ section.settings.background-color }};
+  background-color: {{ section.settings.background-color }};
 }
 </style>
 
